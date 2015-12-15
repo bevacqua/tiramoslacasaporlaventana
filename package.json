@@ -1,0 +1,26 @@
+{
+  "name": "tiramoslacasaporlaventana",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bevacqua/tiramoslacasaporlaventana.git"
+  },
+  "author": "Nicolas Bevacqua <nicolasbevacqua@gmail.com> (https://bevacqua.io/)",
+  "bugs": {
+    "url": "https://github.com/bevacqua/tiramoslacasaporlaventana/issues"
+  },
+  "homepage": "https://github.com/bevacqua/tiramoslacasaporlaventana#readme",
+  "scripts": {
+    "start": "build/start"
+  },
+  "devDependencies": {
+    "browser-sync": "2.7.13",
+    "browserify": "10.2.4",
+    "jade": "1.11.0",
+    "stylus": "0.51.1",
+    "watchify": "3.2.3",
+    "nib": "1.1.0",
+    "normalize.css": "3.0.3"
+  }
+}

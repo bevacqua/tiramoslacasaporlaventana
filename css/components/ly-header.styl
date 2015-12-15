@@ -1,0 +1,62 @@
+.ly-header
+  position relative
+  background-image url('/images/balloons.jpg')
+  background-position center 80%
+  background-size 100%
+  background-repeat no-repeat
+  height 460px
+
+.ly-title
+  position absolute
+  left 0
+  right 0
+  bottom 0
+  margin 0
+
+  background-image linear-gradient(
+    to bottom,
+    transparent 0,
+    rgba(c-green, 0.5) 40%,
+    c-green 100%
+  )
+  font-family f-title
+  font-variant small-caps
+  font-style italic
+  font-weight normal
+  text-shadow 2px 2px 0 rgba(c-green, 0.6)
+  color c-white
+
+  font-size 50px
+  padding 160px 10px 20px
+
+@media only screen and (min-width: 400px)
+  .ly-header
+    height 600px
+
+@media only screen and (min-width: 500px)
+  .ly-header
+    height 700px
+
+@media only screen and (min-width: 600px)
+  .ly-header
+    height 900px
+
+@media only screen and (min-width: 768px)
+  .ly-header
+    height 1100px
+
+  .ly-title
+    font-size 80px
+    padding 80px 10px 20px
+
+@media only screen and (min-width: 960px)
+  .ly-header
+    height 1400px
+
+@media only screen and (min-width: 1200px)
+  .ly-header
+    height 1800px
+
+  .ly-title
+    font-size 100px
+    padding 80px 10px 0px

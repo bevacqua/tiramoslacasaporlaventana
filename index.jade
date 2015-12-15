@@ -1,0 +1,161 @@
+doctype html
+html
+  head
+    title Tiramos la Casa por la Ventana!
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    link(rel='icon', href='/favicon.ico')
+    link(rel='stylesheet', type='text/css', href='/all.css')
+    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Luckiest+Guy:400|Indie+Flower:400')
+  body
+    header.ly-header
+      h1.ly-title Tiramos la Casa por la Ventana!
+    article.lg-lang
+      a(href='/en') English?
+    nav.nv-menu
+      ul.nv-list.yr-clearfix
+        li.nv-item
+          a(href='#when') Cuándo es?
+        li.nv-item
+          a(href='#where') Dónde es?
+        li.nv-item
+          a(href='#what') Qué me pongo?
+        li.nv-item
+          a(href='#how') Cómo llego?
+        li.nv-item
+          a(href='#gifts') Qué les regalo?
+
+    main.ly-main
+      article#when
+        header
+          h1.sc-heading.tt-heading Cúando es?
+        aside.sc-media-990.sc-aside
+          img(src='/images/mila.jpg', alt='')
+        section.sc-media-990.sc-content
+          h2 Después de más de tres años de novios, por fin nos casamos!
+          p La fiesta es el 16 de abril, durante el día &mdash; desde las 12:30 y hasta las 21:00 horas. Habrá una recepción, seguida de baile, asado, más baile, bebidas, postres, cotillón, y más cosas.
+          p Si tienen niños, bebés, u otras personas de su creación, pueden quedarse tranquilos de traerlos ya que tenemos preparadas varias cosas para que se diviertan ellos también!
+          p Hay lugar de sobra para dejar el auto o helicóptero, así que por eso no se hagan problema!
+          p
+            em Les recomendamos 20 horas de ayuno, un par de clases de baile, y bastantes ganas de pasarla bien!
+      article#where
+        header
+          h1.sc-heading.dd-heading Dónde es?
+        section.sc-media-990.sc-content
+          p En la estancia Alamos de Cañuelas, un hermoso campo al aire fresco, con gallinitas, cabritas, y hasta pavos reales! Pero ojo, esos no se comen... nosotros vamos a disfrutar de un asadito campestre en cual las gallinitas y los pavos reales no están comprendidos.
+          p La recepción es justito afuera del salón. Para almorzar nos vamos a encerrar en el salón, así no somos victimas del calentamiento global.
+          p La barra de tragos, el servicio de té, la mesa de dulces, las gallinitas, y el aire fresco los vas a encontrar todos afuera del salón.
+          p
+            span Alamos queda en ruta 3. Para aprender cómo llegar hacé
+            span=' '
+            a(href='#how') click acá
+            span .
+          p
+            em Esperamos que Alamos te guste tanto como a nosotros!
+        aside.sc-media-990.sc-aside
+          img(src='/images/alamos.jpg', alt='')
+      article#what
+        header
+          h1.sc-heading.rc-heading Qué me pongo?
+        aside.sc-media-990.sc-aside
+          img(src='/images/dress.jpg', alt='')
+        section.sc-media-990.sc-content
+          p
+            span Nuestro código de vestimenta es
+            span=' '
+            strong elegante sport
+            span .
+          p Al elegir tu atuendo, tené en cuenta que &mdash; buen clima mediante &mdash; parte de la fiesta va a ser al aire libre.
+          p A las mujeres más coquetas les sugerimos que traigan una cartera con un par de zapatos extra!
+          p
+            span Los niños quedan exentos y
+            span=' '
+            em pueden venir como se les antoje
+            span , así que no se sientan obligados de ponerles un traje, camisa, y zapatos si el nene no quiere!
+          p
+            em Recordá también que vas a tener la opción de bailar y comer hasta reventar, por lo que vestirse bien cómodo es esencial!
+      article#how
+        header
+          div.gt-heading-border
+          h1.sc-heading.gt-heading Cómo llego?
+        mixin gettingThereMenu(i)
+          div.gt-labels
+            label(class='gt-label' + (i === 0 ? ' gt-selected' : ''), for='by-car-city') Desde la Ciudad
+            label(class='gt-label' + (i === 1 ? ' gt-selected' : ''), for='by-car-west') Desde el Oeste
+            label(class='gt-label' + (i === 2 ? ' gt-selected' : ''), for='by-van') En combi
+        mixin coordinates
+          p Te dejamos también las coordenadas para tu GPS.
+          table
+            tr
+              td.yr-right-aligned Latitud
+              td 34° 56' 5.12" S
+            tr
+              td.yr-right-aligned Longitud
+              td 58° 43' 9.35" W
+        input(type='radio', name='how-menu', class='gt-radio', id='by-car-city', checked)
+        div.gt-content
+          section.sc-media-990.sc-content
+            +gettingThereMenu(0)
+            p getting there from city... (south?)
+            +coordinates()
+          aside.sc-media-990.sc-aside
+            iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
+        input(type='radio', name='how-menu', class='gt-radio', id='by-car-west')
+        div.gt-content
+          section.sc-media-990.sc-content
+            +gettingThereMenu(1)
+            p getting there from west...
+            +coordinates()
+          aside.sc-media-990.sc-aside
+            iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
+        input(type='radio', name='how-menu', class='gt-radio', id='by-van')
+        div.gt-content
+          section.sc-media-990.sc-content
+            +gettingThereMenu(2)
+            p Si te morís de ganas de venir pero no tenés como llegar, o si querés autoproclamarte campeón mundial en barra libre, también tenemos opciones para vos!
+            p
+              span Contratamos un servicio de combis que comprende tanto el viaje para venir a la fiesta como para la vuelta. Si querés disponer de esta opción te pedimos que nos lo hagas saber
+              span=' '
+              strong antes del 1 de Marzo
+              span , preferentemente via mail.
+            p
+              span Podés escribirnos acerca de este tema a:
+              span=' '
+              a(href='mailto:combi@tiramoslacasaporlaventana.com', target='_blank') combi@tiramoslacasaporlaventana.com
+          aside.sc-media-990.sc-aside
+            iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
+      article#gifts
+        header
+          h1.sc-heading.bk-heading Qué les regalo?
+        aside.sc-media-990.sc-aside
+          img(src='/images/up.jpg', alt='')
+        section.sc-media-990.sc-content
+          p Para que no tengas que matarte pensando en un regalo, y nosotros no tener que lidiar con una lista de casamiento, preferimos buscar algo más simple.
+          p Si querés, podés ayudarnos con un pedacito de nuestra luna de miel a todo trapo!
+          p Te dejamos los datos de nuestra cuenta a continuación.
+          table
+            tr
+              td.yr-right-aligned Banco
+              td Galicia
+            tr
+              td.yr-right-aligned Cliente
+              td Nicolás Bevacqua
+            tr
+              td.yr-right-aligned CA$
+              td 4012824-4 068-4
+            tr
+              td.yr-right-aligned CBU
+              td 00700689 - 30004012824444
+            tr
+              td.yr-right-aligned CUIT
+              td 20-33905103-9
+          p También va a haber un cofre en el salón donde vas a poder dejar tu colaboración, en el día de la fiesta.
+          p
+            span Si tenés ganas, podés escribirnos un mensajito y dejarlo en el cofre, o también podés mandar un mail a:
+            span=' '
+            a(href='mailto:nosotros@tiramoslacasaporlaventana.com', target='_blank') nosotros@tiramoslacasaporlaventana.com
+    footer.ly-footer
+      span Por saludos &mdash; o ante cualquier consulta &mdash; no dudes en escribirnos a:
+      span=' '
+      a(href='mailto:nosotros@tiramoslacasaporlaventana.com', target='_blank') nosotros@tiramoslacasaporlaventana.com
+      span !
+    script(src='/all.js')

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+stylus --include-css --watch --out . css/all.styl &
+jade --no-debug --watch index.jade &
+watchify js/main.js -o all.js &
+browser-sync start --server --files "*.html,*.js,*.css"
