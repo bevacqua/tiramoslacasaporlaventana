@@ -521,6 +521,9 @@ iframe {
     margin: 0 40px;
   }
 }
+.d-clear {
+  font-family: 'Luckiest Guy', 'Helvetica Neue', HelveticaNeue, HelveticaNeueRoman, HelveticaNeue-Roman, 'Helvetica Neue Roman', TeXGyreHeros, FreeSans, 'Nimbus Sans L', 'Liberation Sans', Helvetica Tahoma, Geneva, Arial, sans-serif;
+}
 a,
 button,
 input[type='submit'] {
