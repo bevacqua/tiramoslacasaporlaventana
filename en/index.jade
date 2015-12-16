@@ -22,78 +22,80 @@ html
         li.nv-item
           a(href='#how') How to get there?
         li.nv-item
-          a(href='#gifts') Gifts?
+          a(href='#gifts') What to gift?
 
     main.ly-main
       article#when
         header
-          h1.sc-heading.tt-heading Cúando es?
+          h1.sc-heading.tt-heading When is it?
         aside.sc-media-990.sc-aside
           img(src='/images/mila.jpg', alt='')
         section.sc-media-990.sc-content
-          h2 Después de más de tres años de novios, nos casamos!
-          p La fiesta es el 16 de abril, durante el día &mdash; desde las 12:30 y hasta las 21:00 horas. Habrá una recepción, seguida de baile, asado, más baile, bebidas, postres, cotillón, y más cosas.
-          p Si tienen niños, bebés, u otras personas de su creación, pueden quedarse tranquilos de traerlos ya que tenemos preparadas varias cosas para que se diviertan ellos también!
-          p Hay lugar de sobra para dejar el auto o helicóptero, así que por eso no se hagan problema!
+          h2 After over three years together, we're getting married!
+          p The wedding party is on april 16th, at day time &mdash; from 12:30 pm and until 09:00 pm. There's going to be a cocktail, followed by dancing, barbecue, more dancing, drinks, desserts, cotillon, and more.
+          p If you have kids, babies, or people you've otherwise created, you can keep calm and bring them. We have planned plenty of activities so that they have fun as well!
+          p There's lots of room to park your car or helicopter, so don't worry about that!
+
           p
-            em Les recomendamos 20 horas de ayuno, un par de clases de baile, y bastantes ganas de pasarla bien!
+            em We recommend 20 hours of fasting, a couple of dance lessons, and an urge to have a good time!
       article#where
         header
-          h1.sc-heading.dd-heading Dónde es?
+          h1.sc-heading.dd-heading Where is it?
         section.sc-media-990.sc-content
           p
-            span En la estancia
+            span At the
             span=' '
-            a(href='http://www.alamosdecanuelas.com.ar/En/', target='_blank') Alamos de Cañuelas
-            span , un hermoso campo al aire fresco, con gallinitas, cabritas, y hasta pavos reales! Pero ojo, esos no se comen... nosotros vamos a disfrutar de un asadito campestre en cual las gallinitas y los pavos reales no están comprendidos.
-          p La recepción es justito afuera del salón. Para almorzar nos vamos a encerrar en el salón, así no somos victimas del calentamiento global.
-          p La barra de tragos, el servicio de té, la mesa de dulces, las gallinitas, y el aire fresco los vas a encontrar todos afuera del salón.
+            a(href='http://www.alamosdecanuelas.com.ar/En/', target='_blank') Álamos de Cañuelas
+            span=' '
+            span ranch, a gorgeous countryside field packed with fresh air, chickens, goatlings, and even peacocks! Alas, we won't be hunting for food... we'll be enjoying delicious argentine barbecue, but the goatlings and peacocks roaming around the ranch won't be included!
+          p The reception cocktail is right outside the lounge. For lunch, we'll head into the lounge, so that we don't fall prey to global warming.
+          p The drink bar, tea service, candy buffet, chickens, and fresh air will all be found outside the lounge.
           p
-            span Alamos queda en ruta 3. Para aprender cómo llegar hacé
+            span Álamos is on national route 3 &mdash; RN3. For directions
             span=' '
-            a(href='#how') click acá
+            a(href='#how') click here
             span .
           p
-            em Esperamos que Alamos te guste tanto como a nosotros!
+            em We hope you like Álamos as much as we do!
         aside.sc-media-990.sc-aside
           img(src='/images/alamos.jpg', alt='')
       article#what
         header
-          h1.sc-heading.rc-heading Qué me pongo?
+          h1.sc-heading.rc-heading What should I wear?
         aside.sc-media-990.sc-aside
           img(src='/images/dress.jpg', alt='')
         section.sc-media-990.sc-content
           p
-            span Nuestro código de vestimenta es
+            span Our dress code is
             span=' '
-            strong elegante sport
+            strong casual elegant
             span .
-          p Al elegir tu atuendo, tené en cuenta que &mdash; buen clima mediante &mdash; parte de la fiesta va a ser al aire libre.
-          p A las mujeres más coquetas les sugerimos que traigan una cartera con un par de zapatos extra!
+          p When picking your dress, keep in mind that &mdash; weather permitting &mdash; the party will take place both indoors and outdoors.
+          p To our fancy women: we suggest that you bring a purse with an extra pair of shoes!
           p
-            span Los niños quedan exentos y
+            span Kids are exempt from our dress code, and
             span=' '
-            em pueden venir como se les antoje
-            span , así que no se sientan obligados de ponerles un traje, camisa, y zapatos si el nene no quiere!
+            em they can dress as they please
+            span , so don't feel compelled to have them wear a suit, a shirt, and shoes if the kid doesn't want to!
           p
-            em Recordá también que vas a tener la opción de bailar y comer hasta reventar, por lo que vestirse bien cómodo es esencial!
+            em Keep in mind you'll have the choice of dancing and eating to your heart's content, meaning that it'll be essential to dress comfortably.
       article#how
         header
           div.gt-heading-border
-          h1.sc-heading.gt-heading Cómo llego?
+          h1.sc-heading.gt-heading How to get there?
         mixin gettingThereMenu(i)
           div.gt-labels
-            label(class='gt-label' + (i === 0 ? ' gt-selected' : ''), for='by-car-city') Desde la Ciudad
-            label(class='gt-label' + (i === 1 ? ' gt-selected' : ''), for='by-car-west') Desde el Oeste
-            label(class='gt-label' + (i === 2 ? ' gt-selected' : ''), for='by-van') En combi
+            label(class='gt-label' + (i === 0 ? ' gt-selected' : ''), for='by-car-city') From the City
+            label(class='gt-label' + (i === 1 ? ' gt-selected' : ''), for='by-car-west') From the West
+            label(class='gt-label' + (i === 2 ? ' gt-selected' : ''), for='by-van') By van
         mixin coordinates
-          p Te dejamos también las coordenadas para tu GPS.
+          p Here's the GPS coordinates for the ranch.
           table
             tr
-              td.yr-right-aligned Latitud
+              td.yr-right-aligned Latitude
               td.d-clear 34° 56' 5.12" S
             tr
-              td.yr-right-aligned Longitud
+              td.yr-right-aligned Longitude
               td.d-clear 58° 43' 9.35" W
         input(type='radio', name='how-menu', class='gt-radio', id='by-car-city', checked)
         div.gt-content
@@ -115,33 +117,33 @@ html
         div.gt-content
           section.sc-media-990.sc-content
             +gettingThereMenu(2)
-            p Si te morís de ganas de venir pero no tenés como llegar, o si querés autoproclamarte campeón mundial en barra libre, también tenemos opciones para vos!
+            p If you're dying to come but don't have how to get to the ranch, or if you want to become the self-proclaimed drink bar world champion, we also have options for you!
             p
-              span Contratamos un servicio de combis que comprende tanto el viaje para venir a la fiesta como para la vuelta. Si querés disponer de esta opción te pedimos que nos lo hagas saber
+              span We've hired a van service that can take you to the ranch and back to the city. If you want to take the van we ask that you let us know
               span=' '
-              strong antes del 1 de Marzo
-              span , preferentemente via mail.
+              strong before March 1st
+              span , preferably via email
             p
-              span Podés escribirnos acerca de este tema a:
+              span You can reach us about this at:
               span=' '
               a(href='mailto:combi@tiramoslacasaporlaventana.com', target='_blank') combi@tiramoslacasaporlaventana.com
           aside.sc-media-990.sc-aside
             iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
       article#gifts
         header
-          h1.sc-heading.bk-heading Qué les regalo?
+          h1.sc-heading.bk-heading What to gift?
         aside.sc-media-990.sc-aside
           img(src='/images/us.jpg', alt='')
         section.sc-media-990.sc-content
-          p Para que no tengas que matarte pensando en un regalo, y nosotros no tener que lidiar con una lista de casamiento, preferimos buscar algo más simple.
-          p Si querés, podés ayudarnos con un pedacito de nuestra luna de miel a todo trapo!
-          p Te dejamos los datos de nuestra cuenta a continuación.
+          p We opted for a simple option so that you don't have to bend over backwards thinking about your gift, and so that we do't have to deal with a wedding gift list: money.
+          p If you want, you can help us with a piece of our all-out honey moon!
+          p Here are our banking details.
           table
             tr
-              td.yr-right-aligned Banco
+              td.yr-right-aligned Bank
               td Galicia
             tr
-              td.yr-right-aligned Cliente
+              td.yr-right-aligned Client
               td Nicolás Bevacqua
             tr
               td.yr-right-aligned CA$
@@ -152,13 +154,13 @@ html
             tr
               td.yr-right-aligned CUIT
               td.d-clear 20-33905103-9
-          p También va a haber un cofre en el salón donde vas a poder dejar tu colaboración, en el día de la fiesta.
+          p There's also going to be a chest at the lounge where you'll be able to leave your present, on the day of the wedding party.
           p
-            span Si tenés ganas, podés escribirnos un mensajito y dejarlo en el cofre, o también podés mandar un mail a:
+            span If you're in the mood, you can write a message for us and leave it in the chest, or you can also send an email to:
             span=' '
             a(href='mailto:nosotros@tiramoslacasaporlaventana.com', target='_blank') nosotros@tiramoslacasaporlaventana.com
     footer.ly-footer
-      span Por saludos &mdash; o ante cualquier consulta &mdash; no dudes en escribirnos a:
+      span Please don't hesitate to send greetings &mdash; or any questions you may have &mdash; via email at:
       span=' '
       a(href='mailto:nosotros@tiramoslacasaporlaventana.com', target='_blank') nosotros@tiramoslacasaporlaventana.com
       span !
