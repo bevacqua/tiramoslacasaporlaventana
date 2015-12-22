@@ -35,6 +35,9 @@ html
     meta(name='twitter:image:src', content='http://tiramoslacasaporlaventana.com/images/balloons.jpg')
 
   body
+    div.ji-container#jisus-craist
+      img.ji-image(src='/images/jisus.gif', alt='')
+      h1.ly-title Tiramos la Casa por la Ventana!
     header.ly-header
       h1.ly-title Tiramos la Casa por la Ventana!
     article.lg-lang
@@ -226,3 +229,7 @@ html
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/service-worker.js')
       }
+      setTimeout(function () {
+        var jisus = document.getElementById('jisus-craist');
+        jisus.parentNode.removeChild(jisus);
+      }, 5000);

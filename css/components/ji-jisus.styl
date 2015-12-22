@@ -1,0 +1,25 @@
+.ji-container
+  position fixed
+  pointer-events none
+  z-index 10000
+  top 0
+  right 0
+  bottom 0
+  left 0
+  background-color #31a47a
+  transition all 0.1s ease-in-out
+  animation fade 5s
+  opacity 0
+
+.ji-image
+  position fixed
+  top 0
+  left 50%
+  margin-left -180px
+  width 320px
+
+@keyframes fade
+  0%
+    opacity 1
+  100%
+    opacity 0

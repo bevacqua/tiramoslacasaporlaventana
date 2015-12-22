@@ -1,11 +1,18 @@
 'use strict';
 
-var version = 'v2::';
+var version = 'v3::';
 var rainbows = 'https://i.imgur.com/EgwCMYB.jpg';
 var offlineFundamentals = [
   '/',
   '/en/',
   '/all.css',
+  '/images/jisus.gif',
+  '/images/balloons.jpg',
+  '/images/dress.jpg',
+  '/images/hat.jpg',
+  '/images/mila.jpg',
+  '/images/us.jpg',
+  '/images/alamos.jpg',
   rainbows
 ];
 
