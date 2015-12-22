@@ -1,0 +1,13 @@
+{
+  "short_name": "Tiramos la Casa por la Ventana",
+  "name": "Tiramos la Casa por la Ventana",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en",
+  "icons": [{
+    "src": "/images/us-144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }]
+}

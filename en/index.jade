@@ -6,6 +6,34 @@ html
     link(rel='icon', href='/favicon.ico')
     link(rel='stylesheet', type='text/css', href='/all.css')
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Luckiest+Guy:400|Indie+Flower:400')
+
+    link(rel='manifest', href='/manifest.json')
+    meta(name='mobile-web-app-capable', content='yes')
+
+    meta(name='theme-color', content='#79e9d5')
+    meta(name='msapplication-navbutton-color', content='#79e9d5')
+    meta(name='apple-mobile-web-app-status-bar-style', content='#79e9d5')
+
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    - description = 'After over three years together, we\'re getting married!\n\nThe wedding party is on april 16th, at day time - from 12:30 pm and until 09:00 pm. There\'s going to be a cocktail, followed by dancing, barbecue, more dancing, drinks, desserts, cotillon, and more.'
+
+    meta(name='description', property='og:description', itemprop='description', content=description)
+    meta(property='og:site_name', content='Tiramos la Casa por la Ventana')
+    meta(name='twitter:title', itemprop='name', property='og:title', content='Tiramos la Casa por la Ventana!')
+    meta(name='twitter:description', content=description)
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:site', content='@nzgb')
+    meta(name='twitter:creator', content='@nzgb')
+
+    meta(property='og:image', content='http://tiramoslacasaporlaventana.com/images/balloons.jpg', itemprop='images')
+    meta(property='og:image', content='http://tiramoslacasaporlaventana.com/images/alamos.jpg')
+    meta(property='og:image', content='http://tiramoslacasaporlaventana.com/images/mila.jpg')
+
+    //- twitter only cares about the last meta image, repeat the cover
+    meta(name='twitter:image:src', content='http://tiramoslacasaporlaventana.com/images/balloons.jpg')
+
   body
     header.ly-header
       h1.ly-title Tiramos la Casa por la Ventana!
@@ -62,9 +90,9 @@ html
       article#what
         header
           h1.sc-heading.rc-heading What should I wear?
-        aside.sc-media-990.sc-aside
+        aside.sc-media-990-2-3.sc-aside
           img(src='/images/dress.jpg', alt='')
-        section.sc-media-990.sc-content
+        section.sc-media-990-1-3.sc-content
           p
             span Our dress code is
             span=' '
@@ -76,47 +104,77 @@ html
             span Kids are exempt from our dress code, and
             span=' '
             em they can dress as they please
-            span , so don't feel compelled to have them wear a suit, a shirt, and shoes if the kid doesn't want to!
+            span , so don't feel compelled to dress them up if they don't want to!
           p
-            em Keep in mind you'll have the choice of dancing and eating to your heart's content, meaning that it'll be essential to dress comfortably.
+            em Keep in mind you'll dance and eat to your heart's content &mdash; it'll be essential to dress comfortably!
+        aside.sc-media-990-2-3.sc-aside
+          img(src='/images/hat.jpg', alt='')
       article#how
         header
           div.gt-heading-border
           h1.sc-heading.gt-heading How to get there?
         mixin gettingThereMenu(i)
           div.gt-labels
-            label(class='gt-label' + (i === 0 ? ' gt-selected' : ''), for='by-car-city') From the City
-            label(class='gt-label' + (i === 1 ? ' gt-selected' : ''), for='by-car-west') From the West
-            label(class='gt-label' + (i === 2 ? ' gt-selected' : ''), for='by-van') By van
-        mixin coordinates
-          p Here's the GPS coordinates for the ranch.
-          table
+            label(class='gt-label' + (i === 0 ? ' gt-selected' : ''), for='by-car') By car
+            label(class='gt-label' + (i === 1 ? ' gt-selected' : ''), for='by-van') By van
+        input(type='radio', name='how-menu', class='gt-radio', id='by-car', checked)
+        section.gt-content.sc-content
+          +gettingThereMenu(0)
+          p Here are the GPS coordinates for the ranch.
+          table.gt-coordinates
             tr
               td.yr-right-aligned Latitude
               td.d-clear 34° 56' 5.12" S
             tr
               td.yr-right-aligned Longitude
               td.d-clear 58° 43' 9.35" W
-        input(type='radio', name='how-menu', class='gt-radio', id='by-car-city', checked)
-        div.gt-content
-          section.sc-media-990.sc-content
-            +gettingThereMenu(0)
-            p getting there from city... (south?)
-            +coordinates()
-          aside.sc-media-990.sc-aside
-            iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
-        input(type='radio', name='how-menu', class='gt-radio', id='by-car-west')
-        div.gt-content
-          section.sc-media-990.sc-content
-            +gettingThereMenu(1)
-            p getting there from west...
-            +coordinates()
-          aside.sc-media-990.sc-aside
-            iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
+          p If you don't own a GPS, you like cartography, or you prefer to read instructions and draw your own maps, here's a description of how to arrive at the ranch.
+          ol.gt-instructions
+            li
+              span Take Ezeiza&mdash;Cañuelas highway, and upon reaching Cañuelas &mdash; that is, the end of the highway &mdash; head out on the first roundabout where there's an
+              span=' '
+              strong ESSO
+              span=' '
+              span gas station
+            li
+              span Take the first entrance to the right
+              span=' '
+              em (never to the left)
+              span , and about 200 m later you'll find another roundabout with an
+              span=' '
+              strong OIL
+              span=' '
+              span gas station
+            li
+              span Make a right, and take the second entrance of the roundabout to the right
+              span=' '
+              em (never to the left)
+            li There's a big green white sign that clearly spells out Buenos Aires and Ruta 3. Take that highway. There's also another big green sign that says González Catán, San Justo, and Buenos Aires. It's exactly 10.5 km until the Álamos ranch
+            li Immediately, you'll find a very big UTA union field to the right
+            li
+              span When you reach km 52, you'll see a huge
+              span=' '
+              em Jehová's Witnesses
+              span temple, and &mdash; 200 m later &mdash; a walking bridge over the route
+            li
+              span On the right-hand side you'll notice a sign that says
+              span=' '
+              strong Petión/Visir (do not take it)
+              span , continue for 500 m on route 3
+            li To the right you'll find the entrance to Álamos de Cañuelas (you'll see a big wooden sign with the ranch's name and logo)
+            li Take a right and 200 m later you'll find the doorway to the ranch
+
+          blockquote
+            p If you have any inquiries or you need further directions, please reach Darío or Ana María at any of the following phone lines:
+            ul
+              li.d-clear 15 5 451 2180
+              li.d-clear 15 5 451 2183
+              li.d-clear 0114 976 0818
+
+          iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
         input(type='radio', name='how-menu', class='gt-radio', id='by-van')
-        div.gt-content
-          section.sc-media-990.sc-content
-            +gettingThereMenu(2)
+        section.gt-content.sc-content
+            +gettingThereMenu(1)
             p If you're dying to come but don't have how to get to the ranch, or if you want to become the self-proclaimed drink bar world champion, we also have options for you!
             p
               span We've hired a van service that can take you to the ranch and back to the city. If you want to take the van we ask that you let us know
@@ -126,9 +184,7 @@ html
             p
               span You can reach us about this at:
               span=' '
-              a(href='mailto:combi@tiramoslacasaporlaventana.com', target='_blank') combi@tiramoslacasaporlaventana.com
-          aside.sc-media-990.sc-aside
-            iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
+              a(href='mailto:van@tiramoslacasaporlaventana.com', target='_blank') van@tiramoslacasaporlaventana.com
       article#gifts
         header
           h1.sc-heading.bk-heading What to gift?
@@ -158,13 +214,12 @@ html
           p
             span If you're in the mood, you can write a message for us and leave it in the chest, or you can also send an email to:
             span=' '
-            a(href='mailto:nosotros@tiramoslacasaporlaventana.com', target='_blank') nosotros@tiramoslacasaporlaventana.com
+            a(href='mailto:us@tiramoslacasaporlaventana.com', target='_blank') us@tiramoslacasaporlaventana.com
     footer.ly-footer
       span Please don't hesitate to send greetings &mdash; or any questions you may have &mdash; via email to:
       span=' '
-      a(href='mailto:nosotros@tiramoslacasaporlaventana.com', target='_blank') nosotros@tiramoslacasaporlaventana.com
+      a(href='mailto:us@tiramoslacasaporlaventana.com', target='_blank') us@tiramoslacasaporlaventana.com
       span !
-    script(src='/all.js')
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -173,3 +228,7 @@ html
 
       ga('create', 'UA-35043128-10', 'auto');
       ga('send', 'pageview');
+    script.
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+      }

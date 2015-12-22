@@ -6,6 +6,34 @@ html
     link(rel='icon', href='/favicon.ico')
     link(rel='stylesheet', type='text/css', href='/all.css')
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Luckiest+Guy:400|Indie+Flower:400')
+
+    link(rel='manifest', href='/manifest.json')
+    meta(name='mobile-web-app-capable', content='yes')
+
+    meta(name='theme-color', content='#79e9d5')
+    meta(name='msapplication-navbutton-color', content='#79e9d5')
+    meta(name='apple-mobile-web-app-status-bar-style', content='#79e9d5')
+
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    - description = 'Después de más de tres años de novios, nos casamos!\n\nLa fiesta es el 16 de abril, durante el día — desde las 12:30 y hasta las 21:00 horas. Habrá una recepción, seguida de baile, asado, más baile, bebidas, postres, cotillón, y más cosas.'
+
+    meta(name='description', property='og:description', itemprop='description', content=description)
+    meta(property='og:site_name', content='Tiramos la Casa por la Ventana')
+    meta(name='twitter:title', itemprop='name', property='og:title', content='Tiramos la Casa por la Ventana!')
+    meta(name='twitter:description', content=description)
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:site', content='@nzgb')
+    meta(name='twitter:creator', content='@nzgb')
+
+    meta(property='og:image', content='http://tiramoslacasaporlaventana.com/images/balloons.jpg', itemprop='images')
+    meta(property='og:image', content='http://tiramoslacasaporlaventana.com/images/alamos.jpg')
+    meta(property='og:image', content='http://tiramoslacasaporlaventana.com/images/mila.jpg')
+
+    //- twitter only cares about the last meta image, repeat the cover
+    meta(name='twitter:image:src', content='http://tiramoslacasaporlaventana.com/images/balloons.jpg')
+
   body
     header.ly-header
       h1.ly-title Tiramos la Casa por la Ventana!
@@ -60,9 +88,9 @@ html
       article#what
         header
           h1.sc-heading.rc-heading Qué me pongo?
-        aside.sc-media-990.sc-aside
+        aside.sc-media-990-2-3.sc-aside
           img(src='/images/dress.jpg', alt='')
-        section.sc-media-990.sc-content
+        section.sc-media-990-1-3.sc-content
           p
             span Nuestro código de vestimenta es
             span=' '
@@ -77,44 +105,70 @@ html
             span , así que no se sientan obligados de ponerles un traje, camisa, y zapatos si el nene no quiere!
           p
             em Recordá también que vas a tener la opción de bailar y comer hasta reventar, por lo que vestirse bien cómodo es esencial!
+        aside.sc-media-990-2-3.sc-aside
+          img(src='/images/hat.jpg', alt='')
       article#how
         header
           div.gt-heading-border
           h1.sc-heading.gt-heading Cómo llego?
         mixin gettingThereMenu(i)
           div.gt-labels
-            label(class='gt-label' + (i === 0 ? ' gt-selected' : ''), for='by-car-city') Desde la Ciudad
-            label(class='gt-label' + (i === 1 ? ' gt-selected' : ''), for='by-car-west') Desde el Oeste
-            label(class='gt-label' + (i === 2 ? ' gt-selected' : ''), for='by-van') En combi
-        mixin coordinates
-          p Te dejamos también las coordenadas para tu GPS.
-          table
+            label(class='gt-label' + (i === 0 ? ' gt-selected' : ''), for='by-car') En auto
+            label(class='gt-label' + (i === 1 ? ' gt-selected' : ''), for='by-van') En combi
+        input(type='radio', name='how-menu', class='gt-radio', id='by-car', checked)
+        section.gt-content.sc-content
+          +gettingThereMenu(0)
+          p Te dejamos las coordenadas para tu GPS.
+          table.gt-coordinates
             tr
               td.yr-right-aligned Latitud
               td.d-clear 34° 56' 5.12" S
             tr
               td.yr-right-aligned Longitud
               td.d-clear 58° 43' 9.35" W
-        input(type='radio', name='how-menu', class='gt-radio', id='by-car-city', checked)
-        div.gt-content
-          section.sc-media-990.sc-content
-            +gettingThereMenu(0)
-            p getting there from city... (south?)
-            +coordinates()
-          aside.sc-media-990.sc-aside
-            iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
-        input(type='radio', name='how-menu', class='gt-radio', id='by-car-west')
-        div.gt-content
-          section.sc-media-990.sc-content
-            +gettingThereMenu(1)
-            p getting there from west...
-            +coordinates()
-          aside.sc-media-990.sc-aside
-            iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
+          p Si no tenés GPS, te gusta la cartografía, o preferís leer instrucciones y dibujar tus propios mapas, te dejamos también una descripción de cómo llegar.
+          ol.gt-instructions
+            li
+              span Tomar autopista Ezeiza&mdash;Cañuelas, y al llegar a Cañuelas, que es el fin de la autopista, desembocar en la primera rotonda donde hay una estación de servicio
+              span=' '
+              strong ESSO
+            li
+              span Doblar en la primera entrada a la derecha
+              span=' '
+              em (nunca hacia la izquierda)
+              span , y a unos 200 m encontrarán otra rotonda con una estación de servicio
+              span=' '
+              strong OIL
+            li
+              span Doblar a la derecha, y en la segunda entrada de la rotonda doblar a la derecha
+              span=' '
+              em (nunca hacia la izquierda)
+            li Hay un cartel grande verde y blanco que dice claramente a Buenos Aires y Ruta 3, tomar por esa autopista. También sobre la derecha enseguida hay otro cartel verde que dice González Catán, San Justo, y Buenos Aires. El kilometraje baja y son exactamente 10.5 km hasta Álamos
+            li Enseguida encontrarán a la derecha un predio muy grande del gremio UTA
+            li
+              span Cuando lleguen al km 52 a la izquierda verán un gran templo de
+              span=' '
+              em Testigos de Jehová
+              span , y &mdash; a 200 m &mdash; un puente peatonal grande que pasa por encima de la ruta
+            li
+              span Sobre la mano derecha verán una entrada a camino de tierra que dice
+              span=' '
+              strong Petión/Visir (no entrar)
+              span , seguir 500 m por la ruta 3
+            li A la derecha está la entrada a Álamos de Cañuelas (van a ver un cartel de madera grande con el nombre del lugar)
+            li Doblar a la derecha y a 200 m está la tranquera de entrada al establecimiento
+
+          blockquote
+            p Ante cualquier duda, o si necesitan más indicaciones, por favor llamar a Darío o a Ana María a cualquiera de estos teléfonos:
+            ul
+              li.d-clear 15 5 451 2180
+              li.d-clear 15 5 451 2183
+              li.d-clear 0114 976 0818
+
+          iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
         input(type='radio', name='how-menu', class='gt-radio', id='by-van')
-        div.gt-content
-          section.sc-media-990.sc-content
-            +gettingThereMenu(2)
+        section.gt-content.sc-content
+            +gettingThereMenu(1)
             p Si te morís de ganas de venir pero no tenés como llegar, o si querés autoproclamarte campeón mundial en barra libre, también tenemos opciones para vos!
             p
               span Contratamos un servicio de combis que comprende tanto el viaje para venir a la fiesta como para la vuelta. Si querés disponer de esta opción te pedimos que nos lo hagas saber
@@ -125,8 +179,6 @@ html
               span Podés escribirnos acerca de este tema a:
               span=' '
               a(href='mailto:combi@tiramoslacasaporlaventana.com', target='_blank') combi@tiramoslacasaporlaventana.com
-          aside.sc-media-990.sc-aside
-            iframe.gt-map(src='http://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
       article#gifts
         header
           h1.sc-heading.bk-heading Qué les regalo?
@@ -162,7 +214,6 @@ html
       span=' '
       a(href='mailto:nosotros@tiramoslacasaporlaventana.com', target='_blank') nosotros@tiramoslacasaporlaventana.com
       span !
-    script(src='/all.js')
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -171,3 +222,7 @@ html
 
       ga('create', 'UA-35043128-10', 'auto');
       ga('send', 'pageview');
+    script.
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+      }

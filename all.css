@@ -481,7 +481,7 @@ button {
   border-radius: 0;
 }
 img {
-  max-width: 100%;
+  width: 100%;
   border: none;
   display: block;
 }
@@ -497,13 +497,16 @@ h5,
 h6 {
   margin: 0;
 }
-p {
+p,
+li {
   margin: 20px 0;
 }
-p:first-child {
+p:first-child,
+li:first-child {
   margin-top: 0;
 }
-p:last-child {
+p:last-child,
+li:last-child {
   margin-bottom: 0;
 }
 table {
@@ -523,6 +526,11 @@ iframe {
 }
 .d-clear {
   font-family: 'Luckiest Guy', 'Helvetica Neue', HelveticaNeue, HelveticaNeueRoman, HelveticaNeue-Roman, 'Helvetica Neue Roman', TeXGyreHeros, FreeSans, 'Nimbus Sans L', 'Liberation Sans', Helvetica Tahoma, Geneva, Arial, sans-serif;
+}
+blockquote {
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #dfdfc7;
 }
 a,
 button,
@@ -665,10 +673,20 @@ body {
   padding: 20px 30px;
 }
 @media only screen and (min-width: 990px) {
-  .sc-media-990 {
+  .sc-media-990,
+  .sc-media-990-1-3,
+  .sc-media-990-2-3 {
     display: inline-block;
     vertical-align: top;
+  }
+  .sc-media-990 {
     width: 50%;
+  }
+  .sc-media-990-1-3 {
+    width: 40%;
+  }
+  .sc-media-990-2-3 {
+    width: 30%;
   }
 }
 .bk-heading {
@@ -697,7 +715,7 @@ body {
   text-align: center;
   background-color: #23d5b5;
   color: #fff;
-  width: 33.33333%;
+  width: 50%;
   padding: 10px;
 }
 .gt-label:hover {
@@ -719,6 +737,10 @@ body {
 .gt-heading {
   background-color: #25355a;
   color: #dfdfc7;
+}
+.gt-instructions,
+.gt-coordinates {
+  margin: 20px 0;
 }
 .dd-heading {
   background-image: -webkit-linear-gradient(top right, #caf7a9 0, #c6d646 40%, #f9bb69 100%);
