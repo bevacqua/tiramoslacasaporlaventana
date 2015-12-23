@@ -1,33 +1,3 @@
-.gt-content
-  display none
-
-.gt-radio
-  display none
-
-.gt-radio:checked + .gt-content
-  display block
-
-.gt-labels
-  background-color darken(c-green, 50%)
-
-.gt-label
-  display inline-block
-  vertical-align top
-  cursor pointer
-  text-align center
-  background-color darken(c-green, 30%)
-  color c-white
-  width 50%
-  padding 10px
-
-  &:hover
-    background-color darken(c-green, 10%)
-
-.gt-selected,
-.gt-selected:hover
-  cursor default
-  background-color darken(c-green, 40%)
-
 .gt-heading-border
   height 5px
   background-image linear-gradient(to right, #20251f 0, #aa3b44 10%, #1e2f5a 25%, #dfdfc7 75%)
@@ -39,3 +9,10 @@
 .gt-instructions,
 .gt-coordinates
   margin 20px 0
+
+.gt-warn
+  background-color #aa3b44
+  color #fff
+
+  a
+    color #dfdfc7

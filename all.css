@@ -528,7 +528,7 @@ iframe {
   font-family: 'Luckiest Guy', 'Helvetica Neue', HelveticaNeue, HelveticaNeueRoman, HelveticaNeue-Roman, 'Helvetica Neue Roman', TeXGyreHeros, FreeSans, 'Nimbus Sans L', 'Liberation Sans', Helvetica Tahoma, Geneva, Arial, sans-serif;
 }
 blockquote {
-  padding: 10px;
+  padding: 20px;
   margin: 20px 0;
   background-color: #dfdfc7;
 }
@@ -697,36 +697,6 @@ body {
   background-image: -ms-linear-gradient(left, #c6e2fa 0, #92c2ea 40%, #633ba0 100%);
   background-image: linear-gradient(to right, #c6e2fa 0, #92c2ea 40%, #633ba0 100%);
 }
-.gt-content {
-  display: none;
-}
-.gt-radio {
-  display: none;
-}
-.gt-radio:checked + .gt-content {
-  display: block;
-}
-.gt-labels {
-  background-color: #199881;
-}
-.gt-label {
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
-  text-align: center;
-  background-color: #23d5b5;
-  color: #fff;
-  width: 50%;
-  padding: 10px;
-}
-.gt-label:hover {
-  background-color: #5be4cb;
-}
-.gt-selected,
-.gt-selected:hover {
-  cursor: default;
-  background-color: #1eb69b;
-}
 .gt-heading-border {
   height: 5px;
   background-image: -webkit-linear-gradient(left, #20251f 0, #aa3b44 10%, #1e2f5a 25%, #dfdfc7 75%);
@@ -742,6 +712,13 @@ body {
 .gt-instructions,
 .gt-coordinates {
   margin: 20px 0;
+}
+.gt-warn {
+  background-color: #aa3b44;
+  color: #fff;
+}
+.gt-warn a {
+  color: #dfdfc7;
 }
 .dd-heading {
   background-image: -webkit-linear-gradient(top right, #caf7a9 0, #c6d646 40%, #f9bb69 100%);

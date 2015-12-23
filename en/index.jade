@@ -117,13 +117,15 @@ html
         header
           div.gt-heading-border
           h1.sc-heading.gt-heading How to get there?
-        mixin gettingThereMenu(i)
-          div.gt-labels
-            label(class='gt-label' + (i === 0 ? ' gt-selected' : ''), for='by-car') By car
-            label(class='gt-label' + (i === 1 ? ' gt-selected' : ''), for='by-van') By van
-        input(type='radio', name='how-menu', class='gt-radio', id='by-car', checked)
-        section.gt-content.sc-content
-          +gettingThereMenu(0)
+        section.sc-content
+          blockquote.gt-warn
+            h2 Don't know how to get there?
+            p
+              span If you don't have a car or any means of getting to the ranch, please reach us at
+              span=' '
+              a(href='mailto:trip@tiramoslacasaporlaventana.com', target='_blank') trip@tiramoslacasaporlaventana.com
+              span=' '
+              span and we'll sort it out!
           p Here are the GPS coordinates for the ranch.
           table.gt-coordinates
             tr
@@ -176,19 +178,6 @@ html
               li.d-clear 0114 976 0818
 
           iframe.gt-map(src='https://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
-        input(type='radio', name='how-menu', class='gt-radio', id='by-van')
-        section.gt-content.sc-content
-            +gettingThereMenu(1)
-            p If you're dying to come but don't have how to get to the ranch, or if you want to become the self-proclaimed drink bar world champion, we also have options for you!
-            p
-              span We've hired a van service that can take you to the ranch and back to the city. If you want to take the van we ask that you let us know
-              span=' '
-              strong before March 1st
-              span , preferably via email
-            p
-              span You can reach us about this at:
-              span=' '
-              a(href='mailto:van@tiramoslacasaporlaventana.com', target='_blank') van@tiramoslacasaporlaventana.com
       article#gifts
         header
           h1.sc-heading.bk-heading What to gift?
@@ -237,7 +226,7 @@ html
       ga('send', 'pageview');
     script.
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('/sw.js')
       }
       setTimeout(function () {
         var jisus = document.getElementById('jisus-craist');

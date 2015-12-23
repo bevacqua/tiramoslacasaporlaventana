@@ -115,13 +115,15 @@ html
         header
           div.gt-heading-border
           h1.sc-heading.gt-heading Cómo llego?
-        mixin gettingThereMenu(i)
-          div.gt-labels
-            label(class='gt-label' + (i === 0 ? ' gt-selected' : ''), for='by-car') En auto
-            label(class='gt-label' + (i === 1 ? ' gt-selected' : ''), for='by-van') En combi
-        input(type='radio', name='how-menu', class='gt-radio', id='by-car', checked)
-        section.gt-content.sc-content
-          +gettingThereMenu(0)
+        section.sc-content
+          blockquote.gt-warn
+            h2 Estás sin auto?
+            p
+              span Si no tenés auto o nadie que te lleve, por favor escribinos a
+              span=' '
+              a(href='mailto:viaje@tiramoslacasaporlaventana.com', target='_blank') viaje@tiramoslacasaporlaventana.com
+              span=' '
+              span que nosotros te lo solucionamos!
           p Te dejamos las coordenadas para tu GPS.
           table.gt-coordinates
             tr
@@ -170,19 +172,6 @@ html
               li.d-clear 0114 976 0818
 
           iframe.gt-map(src='https://maps.google.com/maps?q=-34.9347806,-58.71926388888889&z=17&output=embed', width='100%', height='480', frameBorder='0', scrolling='no')
-        input(type='radio', name='how-menu', class='gt-radio', id='by-van')
-        section.gt-content.sc-content
-            +gettingThereMenu(1)
-            p Si te morís de ganas de venir pero no tenés como llegar, o si querés autoproclamarte campeón mundial en barra libre, también tenemos opciones para vos!
-            p
-              span Contratamos un servicio de combis que comprende tanto el viaje para venir a la fiesta como para la vuelta. Si querés disponer de esta opción te pedimos que nos lo hagas saber
-              span=' '
-              strong antes del 1 de Marzo
-              span , preferentemente via mail.
-            p
-              span Podés escribirnos acerca de este tema a:
-              span=' '
-              a(href='mailto:combi@tiramoslacasaporlaventana.com', target='_blank') combi@tiramoslacasaporlaventana.com
       article#gifts
         header
           h1.sc-heading.bk-heading Qué les regalo?
@@ -231,7 +220,7 @@ html
       ga('send', 'pageview');
     script.
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('/sw.js')
       }
       setTimeout(function () {
         var jisus = document.getElementById('jisus-craist');
