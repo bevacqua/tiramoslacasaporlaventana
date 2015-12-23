@@ -1,6 +1,6 @@
 'use strict';
 
-var version = 'v4::';
+var version = 'v5::';
 var rainbows = 'https://i.imgur.com/EgwCMYB.jpg';
 var offlineFundamentals = [
   '/',
@@ -54,12 +54,13 @@ function fetcher (e) {
     return;
   }
   e.respondWith(caches.match(request).then(function queriedCache (cached) {
-    return cached || fetch(request).then(function fetchedFromNetwork (response) {
+    var net = fetch(request).then(function fetchedFromNetwork (response) {
       var cacheCopy = response.clone();
       caches.open(version + 'pages').then(function add (cache) {
         cache.put(request, cacheCopy);
       });
       return response;
     });
+    return cached || net;
   }));
 }
