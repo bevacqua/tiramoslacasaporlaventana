@@ -34,10 +34,11 @@ html
     //- twitter only cares about the last meta image, repeat the cover
     meta(name='twitter:image:src', content='https://tiramoslacasaporlaventana.com/images/balloons.jpg')
 
+    script.
+      if (location.origin === 'http://tiramoslacasaporlaventana.com') {
+        location.protocol = 'https:';
+      }
   body
-    div.ji-container#jisus-craist
-      img.ji-image(src='/images/jisus.gif', alt='')
-      h1.ly-title Tiramos la Casa por la Ventana!
     header.ly-header
       h1.ly-title Tiramos la Casa por la Ventana!
     article.lg-lang
@@ -223,6 +224,9 @@ html
       span=' '
       a(href='mailto:us@tiramoslacasaporlaventana.com', target='_blank') us@tiramoslacasaporlaventana.com
       span !
+    div.ji-container#jisus-craist
+      img.ji-image(src='/images/jisus.gif', alt='')
+      h1.ly-title Tiramos la Casa por la Ventana!
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
