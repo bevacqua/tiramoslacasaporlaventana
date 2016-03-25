@@ -720,6 +720,10 @@ body {
 .gt-warn a {
   color: #dfdfc7;
 }
+.gt-video {
+  max-width: 900px;
+  margin: 0 auto;
+}
 .dd-heading {
   background-image: -webkit-linear-gradient(top right, #caf7a9 0, #c6d646 40%, #f9bb69 100%);
   background-image: -moz-linear-gradient(top right, #caf7a9 0, #c6d646 40%, #f9bb69 100%);

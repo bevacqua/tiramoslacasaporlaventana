@@ -1,6 +1,6 @@
 'use strict';
 
-var version = 'v7::';
+var version = 'v8::';
 var rainbows = 'https://i.imgur.com/EgwCMYB.jpg';
 var offlineFundamentals = [
   '/',
